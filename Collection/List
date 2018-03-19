@@ -22,5 +22,5 @@ CopyOnWriteArrayList
 读性能高，写性能低
 每次写都会创建出一个新的list
 
-Collections.synchronizedList(ArrayList)
+Collections.synchronizedList(List)
 线程安全
