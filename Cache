@@ -1,0 +1,6 @@
+1 WeakHashMap
+
+2 缓存框架
+  1 EHCache 出自Hibenate
+  2 OSCache 缓存对象,jsp页面,http请求
+  3 JBossCache JBoss集群间共享数据
