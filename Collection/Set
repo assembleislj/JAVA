@@ -10,3 +10,6 @@ CopyOnWriteArraySet类似CopyOnWriteArrayList
 线程安全
 读效率高，写效率低
 每次写都会创建出一个新的list
+
+Collections.synchronizedSet(Set)
+线程安全
