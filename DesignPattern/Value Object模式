@@ -1,0 +1,5 @@
+
+为了减少client到server的请求次数
+且请求的内容是为了获得某个对象（A）的属性
+变为
+client到server传输对象A
