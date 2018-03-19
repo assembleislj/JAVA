@@ -35,3 +35,12 @@ Entry的构造函数中调用了WeakReference(key, queue)，用意在于
 queue很特殊，他是一个ReferenceQueue，当gc回收了这个对象会把这个对象放入这个队列中，
 我们访问这个队列也就知道了有那些Entry被系统回收，也就有机会删除我们table数组内的无效Entry对象了
 
+Collections.synchronizedMap(Map)
+把一个非线程安全的Map类包装成线程安全的
+
+ConcurrentHashMap
+针对高并发设计的Map
+get无锁
+put的锁粒度小于同步的HashMap
+整体性能优于同步的HashMap
+
