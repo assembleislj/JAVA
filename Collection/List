@@ -1,4 +1,4 @@
-ArrayList线程不安全（Vector，实现算法几乎同ArrayList，但多了线程安全）
+ArrayList线程不安全（）
 基于数组实现
 随机遍历(get方法)-高效
 添加元素需扩容时-效率低
@@ -14,3 +14,13 @@ LinkedList
 删除头尾元素-效率高
 没有实现RandomAccess接口,可以通过这个接口来选择合适的遍历方法。以区分ArrayList
 
+Vector
+实现算法几乎同ArrayList，但多了线程安全
+
+CopyOnWriteArrayList
+线程安全
+读性能高，写性能低
+每次写都会创建出一个新的list
+
+Collections.synchronizedList(ArrayList)
+线程安全
