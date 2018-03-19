@@ -6,4 +6,7 @@ HashSet 包装HashMap实现
 TreeSet 包装TreeMap实现
 LinkedHashSet 包装LinkedHashMap实现,功能参见 java/Collection/Map/LinkedHashMap
 
+CopyOnWriteArraySet类似CopyOnWriteArrayList
+线程安全
+读效率高，写效率低
 
