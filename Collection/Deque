@@ -1,0 +1,21 @@
+Deque双端队列
+
+LinkedList
+线程不安全
+详见 JAVA/Collection/List内 
+https://github.com/assembleislj/JAVA/blob/master/Collection/List
+
+ArrayDeque
+基于数组实现
+线程不安全
+随机遍历(get方法)-高效
+添加元素需扩容时-效率低
+
+LinkedBlockingDeque
+链表实现
+线程安全
+没有读写分离，同一时间只能一个线程操作
+
+性能比较
+LinkedBlockingDeque < LinkedBlockingQueue < ConcurrentLinkedQueue
+
