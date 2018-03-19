@@ -1,0 +1,66 @@
+java.nio.Buffer
+ByteBuffer
+CharBuffer
+DoubleBuffer
+FloatBuffer
+IntBuffer
+LongBuffer
+ShortBuffer
+
+例子
+FileInputStream fi = new FileInputStream(new File("xxx.txt"));
+FileChannel fc = fi.getChannel();
+ByteBuffer bf = ByteBuffer.allocate(1024);
+fc.read(bf);
+fc.close();
+bf.flip();
+
+Buffer创建
+1 ByteBuffer bf = ByteBuffer.allocate(1024);
+2 byte array[] = new byte[1024];
+  ByteBuffer bf = ByteBuffer.wrap(array);
+
+Buffer重要属性
+1 position
+2 limit
+3 capactiy 容量
+4 mark
+
+buffer重要函数
+1 rewind()  postion=0 mark清除
+2 clear()   postion=0 limit=capactiy mark清除
+3 flip()    limit=postion postion=0 mark清除 通常用于写入数据后为读取做准备
+
+组合使用可以重复处理数据
+4 mark()    mark = position
+5 reset()   position = mark
+
+6 duplicate() 复制缓冲区，数据共享，独立维护各自的position，limit，capactiy及mark
+
+7 slice() 缓冲区分片 类似duplicate()
+例如
+bf.postion(3);
+bf.limit(5);
+ByteBuffer newbf = bf.slice();
+
+8 asReadOnlyBuffer() 返回只读缓冲区
+
+9 read(ByteBuffer[] dsts) 读取到Buffer数组中
+10 write(ByteBuffer[] srcs) 从Buffer数组中写入数据
+
+效率比较 
+文件映射到内存 > nio > 加上Buffered的Stream
+
+文件映射到内存，效率最高
+RandomAccessFile raf = new RandomAccessFile("xx.txt","rw");
+FileChannel fc = raf.getChannel();
+MappedByteBuffer mbb = fc.map(FileChannel.MapMode.READ_WRITE,0,raf.length());
+mbb.put(0,(byte)97);
+raf.close();
+
+直接内存访问
+ByteBuffer.allocateDirect() 比较allocate是申请在堆上的
+创建销毁的代价大
+读写效率高
+
+
