@@ -23,4 +23,5 @@ CopyOnWriteArrayList
 每次写都会创建出一个新的list
 
 Collections.synchronizedList(List)
-线程安全
+把一个非线程安全的List类包装成线程安全的
+
