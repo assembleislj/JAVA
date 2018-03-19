@@ -1,0 +1,28 @@
+Hashtable
+已经不推荐使用
+线程安全
+key的hash算法效率低于HashMap
+
+HashMap
+数组结构存储数据
+线程不安全
+hash冲突，通过链表来存放,最新版会在元素数量大于8后转换成红黑树以提高效率
+扩容时效率低，需要适当的设置初始容量
+
+LinkedHashMap
+内部包装HashMap来实现
+在HashMap功能基础上又增加了
+1 记录插入顺序
+2 或者记录访问顺序
+
+TreeMap
+根据key排序的Map
+红黑树实现
+工作方式
+1 构造器传入比较器(Comparator)
+2 key实现Comparable接口
+
+TreeMap成员函数
+subMap(startKey,endKey) 两个key之间的集合
+headMap(Key) 小于key的集合
+tailMap(key) 大于key的集合
