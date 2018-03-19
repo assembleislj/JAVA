@@ -4,7 +4,7 @@ Hashtable
 key的hash算法效率低于HashMap
 
 HashMap
-数组结构存储数据
+基于数组实现
 线程不安全
 hash冲突，通过链表来存放,最新版会在元素数量大于8后转换成红黑树以提高效率
 扩容时效率低，需要适当的设置初始容量
@@ -26,3 +26,12 @@ TreeMap成员函数
 subMap(startKey,endKey) 两个key之间的集合
 headMap(Key) 小于key的集合
 tailMap(key) 大于key的集合
+
+WeakHashMap
+弱引用Map
+基于数组实现Entry<K,V>[] table，类似HashMap
+保存到数组中的对象Entry继承于WeakReference，这是个弱引用对象
+Entry的构造函数中调用了WeakReference(key, queue)，用意在于
+queue很特殊，他是一个ReferenceQueue，当gc回收了这个对象会把这个对象放入这个队列中，
+我们访问这个队列也就知道了有那些Entry被系统回收，也就有机会删除我们table数组内的无效Entry对象了
+
