@@ -5,4 +5,4 @@ br = new BufferedReader(new FileReader("fw.txt"));
 bw = new BufferedWriter(new FileWriter("bw2.txt"));
 
 2 BufferedOutputStream和BufferedInputStream
-
+DataOutputStream dos = new DataOutputStream( new BufferedOutputStream( new FileOutputStream("datasteam.txt")));
