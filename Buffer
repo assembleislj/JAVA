@@ -1,8 +1,10 @@
 多使用带Buffer的装饰类提高效率
 
-1 BufferedWriter和BufferedReader
+1 BufferedWriter和BufferedReader 
 br = new BufferedReader(new FileReader("fw.txt"));
 bw = new BufferedWriter(new FileWriter("bw2.txt"));
 
 2 BufferedOutputStream和BufferedInputStream
 DataOutputStream dos = new DataOutputStream( new BufferedOutputStream( new FileOutputStream("datasteam.txt")));
+
+3 FileReader和FileWriter效率高于FileOutputStream和FileInputStream
