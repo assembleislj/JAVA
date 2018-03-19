@@ -1,0 +1,12 @@
+ConcurrentLinkedQueue
+针对高并发设计的，无锁实现
+无阻塞模式
+性能高于LinkedBlockingQueue和ArrayBlockingQueue
+
+ArrayBlockingQueue
+基于数组实现
+阻塞模式
+
+LinkedBlockingQueue
+基于链表实现
+阻塞模式
