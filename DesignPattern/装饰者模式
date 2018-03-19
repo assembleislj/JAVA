@@ -1,0 +1,2 @@
+OutputStream和InputStream类族就是装饰器模式的典型应用
+DataOutputStream dos = new DataOutputStream( new BufferedOutputStream( new FileOutputStream("datasteam.txt")));  
