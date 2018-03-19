@@ -1,0 +1,7 @@
+Hashtable已经不推荐使用
+线程安全
+key的hash算法效率低于HashMap
+
+HashMap
+线程不安全
+hash冲突，通过链表来存放
