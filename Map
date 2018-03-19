@@ -22,7 +22,7 @@ TreeMap
 1 构造器传入比较器(Comparator)
 2 key实现Comparable接口
 
-成员函数
+TreeMap成员函数
 subMap(startKey,endKey) 两个key之间的集合
 headMap(Key) 小于key的集合
 tailMap(key) 大于key的集合
