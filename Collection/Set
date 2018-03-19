@@ -1,0 +1,9 @@
+Set
+集合元素不能重复
+实现都是包装对应Map类,在存储时在value处存储了一个无意义的值
+
+HashSet 包装HashMap实现
+TreeSet 包装TreeMap实现
+LinkedHashSet 包装LinkedHashMap实现,功能参见 java/Collection/Map/LinkedHashMap
+
+没有实现RandomAccess接口
