@@ -12,4 +12,4 @@ CopyOnWriteArraySet类似CopyOnWriteArrayList
 每次写都会创建出一个新的list
 
 Collections.synchronizedSet(Set)
-线程安全
+把一个非线程安全的Set类包装成线程安全的
