@@ -39,8 +39,8 @@ Collections.synchronizedMap(Map)
 把一个非线程安全的Map类包装成线程安全的
 
 ConcurrentHashMap
-针对高并发设计的Map
+针对高并发设计的Map,将数据拆分成多个段，每个段对应一个HashMap
 get无锁
 put的锁粒度小于同步的HashMap
 整体性能优于同步的HashMap
-
+size() 需要把所有段加锁，然后统计加和，效率低于同步的HashMap
