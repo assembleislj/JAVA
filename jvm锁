@@ -11,4 +11,7 @@ jvm在编译时，去除不可能存在竞争的锁，节省锁申请的时间
 -XX:-DoEscapeAnalysis -XX:-EliminateLocks -server 关闭逃逸分析和锁消除
 
 偏向锁 Biased Lock
-线程获取锁后，可进入偏向模式
+线程获取锁后，可进入偏向模式。当线程再次请求这个锁时，无需再进行同步操作，节省了时间
+在竞争激烈的场合不适用
+-XX:+UseBiasedLocking 开启
+-XX:-UseBiasedLocking 关闭
