@@ -1,0 +1,14 @@
+jvm锁优化
+
+自旋锁 Spinning Lock 
+可以使线程在没有取得锁时，不挂起。转而执行空循环，若干空循环后，获得锁继续执行。依旧没有获得锁，则挂起
+-XX:+UseSpinning jvm参数开启 
+-XX:PreBlockSpin 设置自旋等待次数
+
+锁消除 Lock Elimination
+jvm在编译时，去除不可能存在竞争的锁，节省锁申请的时间
+-XX:+DoEscapeAnalysis(开启逃逸分析) -XX:+EliminateLocks 开启锁消除(必须在-server模式下)
+-XX:-DoEscapeAnalysis -XX:-EliminateLocks -server 关闭逃逸分析和锁消除
+
+偏向锁 Biased Lock
+线程获取锁后，可进入偏向模式
