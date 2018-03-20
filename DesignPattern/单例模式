@@ -1,3 +1,4 @@
+单例模式Singleton
 1 静态内部类
 懒汉模式且线程安全
 public class Singleton{  
