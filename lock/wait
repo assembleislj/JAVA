@@ -1,4 +1,4 @@
-wait() 与notify/notifyAll()都是放在同步代码块中才能够执行的。
+Object.wait() 与Object.notify/notifyAll()都是放在同步代码块中才能够执行的。
 如果在执行wait()与notify/notifyAll()之前没有获得相应的对象锁，就会抛出：java.lang.IllegalMonitorStateException异常
 
 ThreadA线程执行lock.wait();这条语句时，释放获得的对象锁lock，并放弃CPU，进入等待队列。
