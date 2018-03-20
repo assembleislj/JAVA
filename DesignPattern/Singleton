@@ -1,1 +1,18 @@
-
+1 静态内部类
+懒汉模式且线程安全
+public class Singleton{  
+    private static class SingletonHolder{  
+        public static Singleton instance = new Singleton();  
+    }  
+    private Singleton(){}  
+    public static Singleton newInstance(){  
+        return SingletonHolder.instance;  
+    }  
+}  
+    
+2 枚举
+提供了自动序列化机制，防止反序列化的时候创建新的对象
+public enum Singleton{  
+    instance;  
+    public void whateverMethod(){}      
+}
