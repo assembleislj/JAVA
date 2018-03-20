@@ -1,0 +1,6 @@
+ThreadLocal
+
+为每个使用该变量的线程提供独立的变量副本，所以每一个线程都可以独立地改变自己的副本，而不会影响其它线程所对应的副本
+set(T value) 设置当前线程的该ThreadLocal的值
+T get()获取与当前线程关联的ThreadLocal的值
+remove() 当前线程的ThreadLocal绑定的值删除
