@@ -1,0 +1,76 @@
+Builder模式
+为了解决当构造器参数过多且有些参数不必要的问题
+
+public class Person {
+    //必要参数
+    private final int id;
+    private final String name;
+    //可选参数
+    private final int age;
+    private final String sex;
+    private final String phone;
+    private final String address;
+    private final String desc;
+
+    private Person(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.age = builder.age;
+        this.sex = builder.sex;
+        this.phone = builder.phone;
+        this.address = builder.address;
+        this.desc = builder.desc;
+    }
+
+    public static class Builder {
+        //必要参数
+        private final int id;
+        private final String name;
+        //可选参数，初始化默认值
+        private int age = 18;
+        private String sex = "man";
+        private String phone = "0";
+        private String address = "0";
+        private String desc = "0";
+
+        //传入必要参数
+        public Builder(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
+        //以下参数可选
+        public Builder age(int val) {
+            this.age = val;
+            return this;
+        }
+
+        public Builder sex(String val) {
+            this.sex = val;
+            return this;
+        }
+
+        public Builder phone(String val) {
+            this.phone = val;
+            return this;
+        }
+
+        public Builder address(String val) {
+            this.address = val;
+            return this;
+        }
+
+        public Builder desc(String val) {
+            this.desc = val;
+            return this;
+        }
+
+        //构造实例
+        public Person build() {
+            return new Person(this);
+        }
+    }
+}
+
+使用方法
+ Person person = new Person.Builder(1, "张三").age(18).sex("男").desc("测试使用builder模式").build();
