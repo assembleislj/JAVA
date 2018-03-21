@@ -1,0 +1,23 @@
+内部类分静态类和非静态类
+1 静态内部类
+public class A{
+   public static class B{}
+}
+
+实例化B：
+B b = A.new B();或者B b = new A.B();
+静态类不能访问外部类的非静态成员。他只能访问外部类的静态成员
+Builder模式就是利用静态内部类
+
+2 非静态内部类
+因为内部类不是静态的,需要实例化它，就得先有一个外部类的对象
+public class A{
+   public class B{}
+}
+
+实例化B：
+A a = new A();
+B b = a.new B();
+非静态内部类能够访问外部类的静态和非静态成员
+java集合类的iterator就是一个内部非静态类，它可以访问外部集合类的信息来完成迭代数据的功能
+
